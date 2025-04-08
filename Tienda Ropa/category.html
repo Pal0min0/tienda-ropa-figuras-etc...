@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OBVIES - Categoría</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="index.html">
+        <img src="IMG/logos/logo.png" alt="Logo OBVIES" class="logo-img" />
+      </a>
+    </div>
+
+    <div class="search-container">
+      <input type="text" id="searchInputCategory" placeholder="Buscar productos..." />
+      <img src="IMG/logos/camara.png" alt="Buscar" class="search-icon" />
+    </div>
+
+    <div class="cart-container">
+      <a href="cart.html">
+        <img src="IMG/logos/carrito.png" alt="Carrito" class="cart-icon" />
+        <span id="cart-count">0</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <h1 id="categoryTitle"></h1>
+    <section class="product-grid" id="productGrid">
+      <!-- Productos inyectados vía script.js -->
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-contact">
+      <p>Correo: obvies@gmail.com | Tel: 300 254 1574</p>
+      <p>Se aplican términos y condiciones</p>
+    </div>
+    <div class="social-icons">
+      <a href="https://instagram.com" target="_blank">
+        <img src="IMG/Redes/Instagram.webp" alt="Instagram">
+      </a>
+      <a href="https://facebook.com" target="_blank">
+        <img src="IMG/Redes/Facebook.png" alt="Facebook">
+      </a>
+      <a href="https://tiktok.com" target="_blank">
+        <img src="IMG/Redes/TikTok.png" alt="TikTok">
+      </a>
+    </div>
+  </footer>
+
+<!-- Modal de Producto -->
+<div id="productModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span id="modalCloseBtn" class="close">&times;</span>
+      <img id="modalProductImage" src="" alt="Producto" />
+      <h2 id="modalProductName"></h2>
+      <p id="modalProductPrice"></p>
+      <p id="modalProductDesc"></p>
+    </div>
+  </div>
+  
+
+  <!-- jQuery 3.7.1 -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

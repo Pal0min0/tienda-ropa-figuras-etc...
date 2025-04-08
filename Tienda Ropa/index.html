@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OBVIES - Inicio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <!-- Logo -->
+    <div class="logo-container">
+      <img src="IMG/logos/logo.png" alt="Logo OBVIES" class="logo-img" />
+    </div>
+
+    <!-- Barra de búsqueda -->
+    <div class="search-container">
+      <input type="text" id="searchInputIndex" placeholder="Buscar productos..." />
+      <img src="IMG/logos/camara.png" alt="Buscar" class="search-icon" />
+    </div>
+
+    <!-- Carrito -->
+    <div class="cart-container">
+      <a href="cart.html">
+        <img src="IMG/logos/carrito.png" alt="Carrito" class="cart-icon" />
+        <span id="cart-count">0</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Sección que contiene el carrusel de fondo y las tarjetas encima -->
+  <main>
+    <section class="cards-section">
+      <!-- Carrusel de fondo -->
+      <div class="carousel-bg">
+        <div class="carousel-track">
+          <div class="carousel-item">
+            <img src="IMG/Carrusel/CAR1.jpg" alt="Fondo 1">
+          </div>
+          <div class="carousel-item">
+            <img src="IMG/Carrusel/CAR2.jpg" alt="Fondo 2">
+          </div>
+          <div class="carousel-item">
+            <img src="IMG/Carrusel/CAR3.jpg" alt="Fondo 3">
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjetas encima -->
+      <section class="cards-container">
+        <!-- Tarjeta 1 -->
+        <div class="card" data-category="objetos">
+          <div class="card-image">
+            <img src="IMG/logos/objetos.png" alt="Objetos" />
+          </div>
+          <h2>Objetos</h2>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="card" data-category="ropa">
+          <div class="card-image">
+            <img src="IMG/logos/ropa.png" alt="Ropa" />
+          </div>
+          <h2>Ropa</h2>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="card" data-category="accesorios">
+          <div class="card-image">
+            <img src="IMG/logos/accesorios.png" alt="Accesorios" />
+          </div>
+          <h2>Accesorios</h2>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div class="card" data-category="figuras">
+          <div class="card-image">
+            <img src="IMG/logos/figuras.png" alt="Figuras" />
+          </div>
+          <h2>Figuras</h2>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-contact">
+      <p>Correo: obvies@gmail.com | Tel: 300 254 1574</p>
+      <p>Se aplican términos y condiciones</p>
+    </div>
+    <div class="social-icons">
+      <a href="https://instagram.com" target="_blank">
+        <img src="IMG/Redes/Instagram.webp" alt="Instagram">
+      </a>
+      <a href="https://facebook.com" target="_blank">
+        <img src="IMG/Redes/Facebook.png" alt="Facebook">
+      </a>
+      <a href="https://tiktok.com" target="_blank">
+        <img src="IMG/Redes/TikTok.png" alt="TikTok">
+      </a>
+    </div>
+  </footer>
+
+  <!-- jQuery 3.7.1 -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+

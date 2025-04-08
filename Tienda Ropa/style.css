@@ -1,0 +1,546 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap');
+/* ------------------ Reset y configuración base ------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+  }
+  
+  body {
+    font-family: "Bungee Tint", sans-serif;
+    background-color: #F8E8C1;  /* Beige claro */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* ------------------ HEADER ------------------ */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    background-color: #F2D5A8; /* Tono ligeramente oscuro */
+    padding: 0 1rem;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-img {
+    height: 50px;
+    width: auto;
+  }
+  
+  /* Barra de búsqueda */
+  .search-container {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    max-width: 400px;
+    margin: 0 1rem;
+    position: relative;
+  }
+  
+  .search-container input {
+    width: 100%;
+    padding: 8px 36px 8px 8px;
+    border: 2px solid #CE4B2F;
+    border-radius: 4px;
+  }
+  
+  .search-icon {
+    position: absolute;
+    right: 8px;
+    width: 24px;
+    cursor: pointer;
+  }
+  
+  /* Carrito */
+  .cart-container {
+    position: relative;
+  }
+  
+  .cart-icon {
+    width: 40px;
+    cursor: pointer;
+  }
+  
+  #cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ffffff;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-size: 0.8rem;
+  }
+  
+  #cartItems {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    max-width: 900px;
+    background-color: #fff6da;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  
+  .cart-item:hover {
+    transform: scale(1.01);
+  }
+  
+  .cart-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    background-color: #fff;
+    padding: 10px;
+  }
+  
+  .cart-item-info {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .cart-item-info h3 {
+    font-size: 1.4rem;
+    margin: 0 0 10px;
+  }
+  
+  .cart-item-info p {
+    margin: 5px 0;
+  }
+  
+  .buy-btn {
+    display: block;
+    margin: 40px auto;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    background-color: #ea4c2d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .buy-btn:hover {
+    background-color: #d23c20;
+  }
+  
+  .cart-card {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .cart-image {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 8px;
+  }
+  
+  .cart-info {
+    flex-grow: 1;
+  }
+  
+  .cart-info h3 {
+    margin: 0 0 5px;
+    font-size: 1.2rem;
+  }
+  
+  .cart-info p {
+    margin: 0 0 10px;
+    font-weight: bold;
+  }
+  
+  .remove-btn {
+    background-color: #ce4b2f;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .remove-btn:hover {
+    background-color: #b43e27;
+  }
+  
+  
+
+  /* ------------------ MAIN ------------------ */
+  /* 
+     Hacemos que main sea un contenedor flexible
+     que centre su contenido vertical y horizontalmente.
+  */
+  main {
+    flex: 1;
+    display: flex;              /* Flex container */
+    flex-direction: column;     /* Alineamos el contenido en columna */
+    align-items: center;        /* Centra horizontalmente */
+    justify-content: center;    /* Centra verticalmente */
+    padding: 1rem;
+  }
+  
+  /* ------------------ Tarjetas de la Página de Inicio ------------------ */
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    /* Eliminamos margen vertical para que queden en el centro exacto */
+    margin: 0;
+  }
+  
+  .card {
+    width: 180px;
+    height: 400px;
+    background-color: #F2D5A8;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: rotate(-3deg);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .card:hover {
+    transform: rotate(0deg) scale(1.05);
+  }
+  
+  /* Contenedor de la imagen en la tarjeta */
+  .card-image {
+    width: 100%;
+    height: 60%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transform: rotate(3deg); /* Compensa la inclinación de la tarjeta */
+  }
+  
+  /* Texto de la tarjeta */
+  .card h2 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #CE4B2F;
+  }
+  
+  /* ------------------ Título de la Categoría (OBJETOS, etc.) ------------------ */
+  #categoryTitle {
+    text-align: center;   /* Centra el texto */
+    margin-bottom: 2rem;  /* Espacio debajo del título */
+  }
+  
+  /* ------------------ Tarjetas de Producto (Category) ------------------ */
+  /* Contenedor para la cuadrícula de productos */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;        /* Centra horizontalmente */
+    padding: 2rem 0;
+    justify-items: center; /* Centra cada tarjeta en su celda */
+  }
+  
+  .product-item {
+    width: 180px;
+    height: 300px;
+    background-color: #F2D5A8;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: rotate(-3deg);
+    position: relative;
+  }
+  
+  .product-item:hover {
+    transform: rotate(0deg) scale(1.05);
+  }
+  
+  .product-item img {
+    width: 100%;
+    height: 60%;
+    object-fit: contain;
+    transform: rotate(3deg);
+  }
+  
+  .product-item h3 {
+    margin: 0.5rem 0;
+    color: #CE4B2F;
+    text-align: center;   /* Centra el nombre del producto */
+  }
+  
+  /* Botón de "Añadir al Carrito" */
+  .add-to-cart-btn {
+    background-color: #CE4B2F;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+  }
+  
+  .add-to-cart-btn:hover {
+    background-color: #b54229;
+  }
+  
+  /* ------------------ FOOTER ------------------ */
+  footer {
+    background-color: #F2D5A8;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto; /* Empuja el footer al fondo */
+  }
+  
+  /* ------------------ Responsividad ------------------ */
+  @media (max-width: 768px) {
+    .product-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .product-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .search-page #searchResults {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 40px;
+  }
+  
+  .search-page .product-item {
+    width: 300px;
+    font-size: 18px;
+  }
+  .payment-form {
+    max-width: 500px;
+    margin: 30px auto;
+    background-color: #fff8dc;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .payment-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+  }
+  
+  .payment-form input {
+    padding: 10px;
+    font-size: 1rem;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .buy-btn {
+    background-color: #ea4c2d;
+    color: white;
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .buy-btn:hover {
+    background-color: #d43b1d;
+  }
+  footer {
+    background-color: #F2D5A8;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+  }
+  
+  .footer-contact {
+    margin-bottom: 10px;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .social-icons a img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff6da;
+    padding: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .social-icons a img:hover {
+    transform: scale(1.1);
+  }
+
+  /* Sección contenedora del carrusel y las tarjetas */
+.cards-section {
+  position: relative;     /* Para poder posicionar el carrusel en absoluto */
+  min-height: 600px;      /* Ajusta la altura que quieras */
+  overflow: hidden;       /* Oculta el excedente del carrusel si lo hubiera */
+}
+
+/* Carrusel de fondo */
+.carousel-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;             /* Detrás de las tarjetas */
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  animation: slide 12s infinite ease-in-out;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+  height: 100%;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;           /* Transparencia para no tapar demasiado */
+}
+
+/* Animación del carrusel */
+@keyframes slide {
+  0%, 15%   { transform: translateX(0%); }
+  25%, 40%  { transform: translateX(-100%); }
+  50%, 65%  { transform: translateX(-200%); }
+  75%, 100% { transform: translateX(0%); }
+}
+
+/* Contenedor de las tarjetas, encima del carrusel */
+.cards-container {
+  position: relative;
+  z-index: 1;             /* Más adelante que el carrusel */
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4rem;      /* Espacio superior, separa tarjetas del borde */
+  padding-bottom: 4rem;   /* Espacio inferior */
+  /* Ajusta estos valores según quieras */
+}
+
+/* Estilos de las tarjetas (mantenlos o ajusta según tu diseño) */
+.card {
+  width: 180px;
+  height: 400px;
+  background-color: #F2D5A8;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: rotate(-3deg);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+.card-image {
+  width: 100%;
+  height: 60%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transform: rotate(3deg);
+}
+
+.card h2 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #CE4B2F;
+}
+
+/* Ajusta la responsividad a tu gusto */
+@media (max-width: 768px) {
+  .cards-container {
+    flex-direction: column;
+  }
+}
+
+  
+  
+  

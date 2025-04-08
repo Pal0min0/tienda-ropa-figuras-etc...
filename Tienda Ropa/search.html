@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Búsqueda de Productos</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
+</head>
+<body class="search-page">
+    <header>
+        <div class="logo-container">
+          <a href="index.html">
+            <img src="IMG/logos/logo.png" alt="Logo OBVIES" class="logo-img" />
+          </a>
+        </div>
+        <div class="search-container">
+          <input type="text" placeholder="Buscar productos..." disabled />
+          <img src="IMG/logos/camara.png" alt="Buscar" class="search-icon" />
+        </div>
+        <div class="cart-container">
+          <img src="IMG/logos/carrito.png" alt="Carrito" class="cart-icon" />
+          <span id="cart-count">0</span>
+        </div>
+      </header> 
+
+  <main>
+    <div id="searchResults" class="product-grid">
+      <!-- Resultados se renderizan aquí -->
+    </div>
+  </main>
+
+<!-- Modal de Producto -->
+<div id="productModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <span id="modalCloseBtn" class="close">&times;</span>
+    <img id="modalProductImage" src="" alt="Producto" />
+    <h2 id="modalProductName"></h2>
+    <p id="modalProductPrice"></p>
+    <p id="modalProductDesc"></p>
+  </div>
+</div>
+
+ 
+  <script src="script.js"></script>
+  <script>
+    // Ejecutar búsqueda si hay parámetro en URL
+    $(document).ready(function () {
+      updateCartCount();
+      const params = new URLSearchParams(window.location.search);
+      const query = params.get('q');
+      if (query) {
+        $('#searchInputGlobal').val(query);
+        searchProducts();
+      }
+    });
+
+    function searchProducts() {
+      const searchText = $('#searchInputGlobal').val().toLowerCase();
+      const products = allProducts.filter(p => p.name.toLowerCase().includes(searchText));
+      const $results = $('#searchResults');
+      $results.empty();
+
+      if (products.length === 0) {
+        $results.html('<p>No se encontraron productos con ese nombre.</p>');
+        return;
+      }
+
+      $.each(products, function (index, product) {
+        const productHTML = `
+          <div class="product-item">
+            <img src="${product.image}" alt="${product.name}" />
+            <h3>${product.name}</h3>
+            <button class="add-to-cart-btn" data-id="${product.id}">Añadir al Carrito</button>
+          </div>
+        `;
+        $results.append(productHTML);
+      });
+    }
+
+    // Evento para añadir producto al carrito desde resultados
+    $('#searchResults').on('click', '.add-to-cart-btn', function () {
+      const productId = parseInt($(this).data('id'));
+      addToCart(productId);
+    });
+  </script>
+
+
+  
+
+</body>
+</html>
